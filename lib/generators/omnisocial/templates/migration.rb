@@ -14,6 +14,7 @@ class CreateOmnisocialTables < ActiveRecord::Migration
       t.string :name
       t.string :login
       t.string :picture_url
+      t.string :email
       # Any additional fields here 
       
       t.timestamps

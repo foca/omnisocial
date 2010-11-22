@@ -21,6 +21,12 @@ module Omnisocial
           Omnisocial.service_configs[:twitter].app_secret
       end
 
+      if Omnisocial.service_configs[:github]
+        config.app_middleware.use ::OmniAuth::Strategies::GitHub,
+          Omnisocial.service_configs[:github].app_key,
+          Omnisocial.service_configs[:github].app_secret
+      end
+
       if Omnisocial.service_configs[:facebook]
         config.app_middleware.use ::OmniAuth::Strategies::Facebook, 
           Omnisocial.service_configs[:facebook].app_key,
